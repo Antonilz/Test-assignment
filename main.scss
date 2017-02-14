@@ -1,0 +1,61 @@
+$red-color: #BF360C;
+$yellow-color: #F8E71C;
+$eye-color: black;
+$mouth-color: black;
+$box-color: #4A90E2;
+
+$figure-border: 1px solid black;
+$smile-radius: 50px;
+$eye-radius: 9px;
+$square-length: 120px;
+
+
+.smile {
+  background: $yellow-color;
+  width: $smile-radius*2;
+  height: $smile-radius*2;
+  margin: 15px auto;
+  border-radius: 50%;
+  position: relative;
+  border: $figure-border;
+  cursor: pointer;
+  z-index: 0;
+  .eye {
+    background: $eye-color;
+    border-radius: 50%;
+    width: $eye-radius*2;
+    height: $eye-radius*2;
+    position: absolute;
+    top: 20px;
+    display: inline-block;
+  }
+
+  #left-eye {
+   left: 20px;
+  }
+
+  #right-eye {
+   right: 20px;
+  }
+
+  .mouth {
+    position: absolute;
+    bottom: 15px;
+    left: $smile-radius - 40px;
+    width: 80px;
+    height: 60px;
+    border-radius: 50%;
+    border-bottom: 4px solid $mouth-color;
+  }
+}
+
+.box {
+  background: $box-color;
+  border: $figure-border;
+  position: fixed;
+  bottom: 10px;
+  z-index: 1;
+  height: $square-length;
+  width: $square-length;
+  left: calc(50% - #{$square-length}/2);
+}
